@@ -1,0 +1,17 @@
+plugin: aws_ec2
+regions:
+  - us-east-1
+  - us-west-1
+  - us-west-2
+filters:
+  "instance-state-name": running
+strict_permissions: False
+hostnames:
+  - tag:Name
+keyed_groups:
+- prefix: tag
+  key: tags
+compose:
+  ansible_host: private_ip_address
+# Can use IAM role in future to avoid IAM users and static passwords
+#iam_role_arn: "asdfas"
