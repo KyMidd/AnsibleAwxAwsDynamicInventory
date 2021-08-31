@@ -1,8 +1,6 @@
 plugin: aws_ec2
 regions:
-  - us-east-1
-  - us-west-1
-  - us-west-2
+  - eu-central-1
 filters:
   "instance-state-name": running
 strict_permissions: False
